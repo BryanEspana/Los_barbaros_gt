@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 const genres = [
   {
     title: "Pop Latino",
-    artists: ["Juanes", "Carlos Vives", "Shakira", "Maná"],
+    artists: ["Juanes", "Maná"],
     color: "from-zinc-400 to-zinc-500",
   },
   {
@@ -17,15 +17,10 @@ const genres = [
   },
   {
     title: "Baladas Románticas",
-    artists: ["Luis Miguel", "Ricardo Arjona", "Sin Bandera", "Reik"],
+    artists: ["Luis Miguel", "Sin Bandera"],
     color: "from-zinc-600 to-zinc-700",
   },
-  {
-    title: "Hits Internacionales",
-    subtitle: "Inglés & Español",
-    artists: ["Coldplay", "Bruno Mars", "The Killers", "Maroon 5"],
-    color: "from-zinc-300 to-zinc-400",
-  },
+
 ];
 
 export default function Repertoire() {
@@ -70,26 +65,25 @@ export default function Repertoire() {
             La música que{" "}
             <span className="text-gradient">prende</span> tu fiesta
           </h2>
+          <div className="section-divider" style={{ marginTop: "1rem", marginBottom: "1rem" }} />
           <p 
             className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto text-center"
             style={{ marginTop: "1.5rem", marginBottom: "2.5rem", padding: "0 1rem" }}
           >
             Un repertorio amplio y cuidadosamente seleccionado para cada momento de tu evento.
           </p>
-          <div className="section-divider" />
         </motion.div>
 
-        {/* Genre grid */}
-        <div className="flex justify-center w-full">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl w-full">
-            {genres.map((genre, i) => (
+        {/* Genre grid — flex wrap for perfect centering of uneven items */}
+        <div className="flex flex-wrap justify-center gap-8 lg:gap-10 max-w-7xl mx-auto w-full">
+          {genres.map((genre, i) => (
             <motion.div
               key={genre.title}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.12 }}
-              className="neon-card group relative overflow-hidden flex flex-col items-center justify-center h-full"
-              style={{ padding: "2rem 1.5rem" }}
+              className="neon-card group relative overflow-hidden flex flex-col items-center justify-center"
+              style={{ padding: "2.5rem 2rem", width: "100%", maxWidth: "450px" }}
             >
               {/* Background glow on hover */}
               <div
@@ -99,7 +93,7 @@ export default function Repertoire() {
 
               <div className="relative z-10 flex flex-col items-center w-full">
                 {/* Title */}
-                <div className="flex flex-col items-center gap-2 mb-6 text-center">
+                <div className="flex flex-col items-center gap-2 mb-10 text-center">
                   <div>
                     <h3
                       className="text-2xl md:text-3xl font-bold text-white mb-2"
@@ -133,7 +127,6 @@ export default function Repertoire() {
               </div>
             </motion.div>
           ))}
-          </div>
         </div>
 
         {/* Additional note */}
@@ -141,7 +134,8 @@ export default function Repertoire() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 1, duration: 0.8 }}
-          className="text-center text-[var(--text-muted)] mt-16 text-sm md:text-base"
+          className="text-center text-[var(--text-muted)] mt-24 text-sm md:text-base"
+          style={{marginTop: "1rem"}}
         >
            Y mucho más... Nuestro repertorio se adapta a tus gustos y los de tus invitados
         </motion.p>

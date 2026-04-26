@@ -66,7 +66,7 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/50212345678?text=Hola!%20Me%20interesa%20cotizar%20un%20evento%20con%20Los%20Bárbaros"
+              href="https://wa.me/50258476554?text=Hola!%20Me%20interesa%20cotizar%20un%20evento%20con%20Los%20Bárbaros"
               target="_blank"
               rel="noopener noreferrer"
               className="glow-button text-lg px-10 py-5 !bg-gradient-to-r !from-zinc-200 !to-white !text-black

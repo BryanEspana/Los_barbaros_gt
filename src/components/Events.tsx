@@ -73,17 +73,18 @@ export default function Events() {
           >
             Donde <span className="text-gradient">brillamos</span>
           </h2>
+          <div className="section-divider" />
+
           <p 
             className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto text-center"
             style={{ marginTop: "1rem", marginBottom: "2.5rem", padding: "0 1rem" }}
           >
             Nos adaptamos a cualquier tipo de evento. Tu visión, nuestra música.
           </p>
-          <div className="section-divider" />
         </motion.div>
 
         {/* Event cards — flex wrap for perfect centering of 5 items */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-6xl mx-auto w-full">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-7xl mx-auto w-full">
           {eventTypes.map((event, i) => (
             <motion.div
               key={event.title}
@@ -91,7 +92,7 @@ export default function Events() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.1 }}
               className={`neon-card group cursor-default relative overflow-hidden flex flex-col items-center justify-center ${event.border}`}
-              style={{ padding: "3rem 2rem", width: "100%", maxWidth: "340px", flex: "1 1 300px" }}
+              style={{ padding: "3rem 2rem", width: "100%", maxWidth: "350px" }}
             >
               {/* Background gradient on hover */}
               <div

@@ -90,13 +90,14 @@ export default function Experience() {
           >
             La <span className="text-gradient">experiencia</span> que buscas
           </h2>
+          <div className="section-divider mt-8 mb" />
+
           <p 
             className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto text-center"
             style={{ marginTop: "1.5rem", marginBottom: "2.5rem", padding: "0 1rem" }}
           >
             No somos solo una banda. Somos la garantía de que tu evento será recordado por siempre.
           </p>
-          <div className="section-divider mt-8" />
         </motion.div>
 
         {/* Feature cards grid */}
